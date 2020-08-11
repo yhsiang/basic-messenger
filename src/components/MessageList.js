@@ -8,7 +8,11 @@ const MessageList = ({ messages, currentUserId }) => {
   return (
     <div className="MessageList">
       {messages.map(({content, userId}) => (
-        <Message content={content} isSelf={userId===currentUserId} userId={userId} />
+        <Message
+          key={`${content}+${userId}`}
+          content={content}
+          isSelf={userId===currentUserId} userId={userId}
+        />
       ))}
     </div>
   );

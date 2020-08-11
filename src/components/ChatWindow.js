@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
+import MessageContext from '../contexts/MessageContext';
 
 import './ChatWindow.css';
 //  ChatWindowProps = {
 // }
-const ChatWindow = ({ messages, chatTo, currentUserId }) => {
+const ChatWindow = ({ chatTo, currentUserId }) => {
+  const {messages, addMessage} = useContext(MessageContext);
   return (
     <div className="ChatWindow">
       <div className="ChatWindow-header">Chat with {chatTo.name}</div>
@@ -13,7 +15,7 @@ const ChatWindow = ({ messages, chatTo, currentUserId }) => {
         <MessageList messages={messages} currentUserId={currentUserId} />
       </div>
       <div className="ChatWindow-actions">
-        <MessageInput />
+        <MessageInput addMessage={addMessage} currentUserId={currentUserId} />
       </div>
     </div>
   );

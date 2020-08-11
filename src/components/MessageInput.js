@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 //  MessageInputProps = {
 // }
-const MessageInput = () => {
+const MessageInput = ({ addMessage, currentUserId }) => {
+  const [value, setValue] = useState("");
+  const onKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      addMessage({ userId: currentUserId, content: event.target.value});
+      setValue("");
+    }
+  }
+  const onChange= (event) => setValue(event.target.value);
   return (
     <div className="MessageInput">
-      <input />
+      <input onKeyDown={onKeyDown} onChange={onChange} value={value} />
     </div>
   );
 };

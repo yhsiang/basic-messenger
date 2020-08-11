@@ -13,6 +13,7 @@ const ContactList = ({ contacts }) => {
       <div className="ContactList-body">
         {contacts.map(({name, avatarURL, status}) => (
         <Contact
+          key={`${name}-${avatarURL}`}
           name={name}
           avatarURL={avatarURL}
           status={status}
