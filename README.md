@@ -4,11 +4,15 @@ This is a basic messenger app.
 
 # Install
 
-`$ yarn install`
-`$ yarn start`
+Please install dependencies first and start local dev server.
+* `$ yarn install`
+* `$ yarn start`
 
 # Design
 
+Initial idea
+
+```
 <App>
   <ChatWindow>
     <MessageList>
@@ -27,3 +31,4 @@ This is a basic messenger app.
     </Contact>
   </ContactList>
 </App>
+```
