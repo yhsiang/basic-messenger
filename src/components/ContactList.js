@@ -6,17 +6,18 @@ import './ContactList.css';
 //  ContactListProps = {
 //    contacts: [ContactProps]
 //  }
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, changeContact }) => {
   return (
     <div className="ContactList">
       <div className="ContactList-header">ContactList</div>
       <div className="ContactList-body">
-        {contacts.map(({name, avatarURL, status}) => (
+        {contacts.map(({name, avatarURL, status, userId}) => (
         <Contact
           key={`${name}-${avatarURL}`}
           name={name}
           avatarURL={avatarURL}
           status={status}
+          onClick={() => changeContact(userId)}
         />))}
       </div>
     </div>

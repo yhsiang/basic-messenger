@@ -2,24 +2,25 @@ import React, {useState} from 'react';
 import ContactList from './components/ContactList';
 import ChatWindow from './components/ChatWindow';
 import ContactContext, { contactMap, currentUser } from './contexts/ContactContext';
-import MessageContext, { defaultMessages } from './contexts/MessageContext';
+import MessageContext, { defaultMessages, defaultChatToId } from './contexts/MessageContext';
 import './App.css';
 
 function App() {
-  const [messages, pushMessage]= useState(defaultMessages);
+  const [messageMap, pushMessage] = useState(defaultMessages);
+  const [chatToId, setChatToId] = useState(defaultChatToId);
   const contacts = Object.values(contactMap);
-  const chatToId = 123;
 
-  const addMessage = (message) => {
-    console.log(message);
-    pushMessage(messages => [message, ...messages])
-  };
+  const addMessage = message => pushMessage((oldMessages) => {
+    const chatToMessages = oldMessages[chatToId];
+    return { ...oldMessages, [chatToId]: [message, ...chatToMessages] };
+  });
+  const changeContact = userId => setChatToId(userId);
 
   return (
     <ContactContext.Provider value={contactMap}>
       <div className="App">
-        <ContactList contacts={contacts} />
-        <MessageContext.Provider value={{ messages, addMessage }}>
+        <ContactList contacts={contacts} changeContact={changeContact} />
+        <MessageContext.Provider value={{ messageMap, addMessage, chatToId }}>
           <ChatWindow
             chatTo={contactMap[chatToId]}
             currentUserId={currentUser.userId}

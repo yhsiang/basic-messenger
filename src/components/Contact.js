@@ -6,9 +6,9 @@ import Avatar from './Avatar';
 //    status: boolean
 //    name: string
 // }
-const Contact = ({ avatarURL, name, status }) => {
+const Contact = ({ avatarURL, name, status, onClick }) => {
   return (
-    <div className="Contact">
+    <div className="Contact" onClick={onClick}>
       <Avatar src={avatarURL} alt={name} />
       <div className="Contact-name">{name}</div>
       <div className={`Contact-status-${status? "on": "off"}`}></div>
