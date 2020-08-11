@@ -1,27 +1,8 @@
 import React from 'react';
 import ContactList from './components/ContactList';
-import './App.css';
 import ChatWindow from './components/ChatWindow';
-
-const currentUser = {
-  userId: 1,
-  avatarURL: "https://gravatar.com/avatar/6ad59bb2415618eeed4a1c841895e5f9?s=200&d=monsterid&r=pg",
-  name: "Ly Cheng",
-  status: true,
-}
-
-const contactMap = {
-  123: {
-    avatarURL: "https://gravatar.com/avatar/76f75d5b2c6839cc6ab4a593c1d90149?s=200&d=monsterid&r=pg",
-    name: "Foo One",
-    status: true,
-  },
-  456: {
-    avatarURL: "https://gravatar.com/avatar/2fb62a9246f160de3ae670a875e3a747?s=200&d=monsterid&r=pg",
-    name: "Bar Chart",
-    status: true,
-  },
-};
+import ContactContext, { contactMap, currentUser } from './contexts/ContactContext';
+import './App.css';
 
 const messages = [
   {content: "oh bad!", userId: 123},
@@ -37,10 +18,12 @@ function App() {
   const chatToId = 123;
 
   return (
-    <div className="App">
-      <ContactList contacts={contacts} />
-      <ChatWindow messages={messages} chatTo={contactMap[chatToId]} currentUser={currentUser} />
-    </div>
+    <ContactContext.Provider value={contactMap}>
+      <div className="App">
+        <ContactList contacts={contacts} />
+        <ChatWindow messages={messages} chatTo={contactMap[chatToId]} currentUserId={currentUser.userId} />
+      </div>
+    </ContactContext.Provider>
   );
 }
 

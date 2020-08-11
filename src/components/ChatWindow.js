@@ -5,12 +5,12 @@ import MessageInput from './MessageInput';
 import './ChatWindow.css';
 //  ChatWindowProps = {
 // }
-const ChatWindow = ({ messages, chatTo, currentUser }) => {
+const ChatWindow = ({ messages, chatTo, currentUserId }) => {
   return (
     <div className="ChatWindow">
       <div className="ChatWindow-header">Chat with {chatTo.name}</div>
       <div className="ChatWindow-body">
-        <MessageList messages={messages} currentUserId={currentUser.userId} />
+        <MessageList messages={messages} currentUserId={currentUserId} />
       </div>
       <div className="ChatWindow-actions">
         <MessageInput />
