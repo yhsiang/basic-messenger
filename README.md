@@ -13,7 +13,7 @@ This is a basic messenger app.
   <ChatWindow>
     <MessageList>
       <Message>
-        <Icon />
+        <Avatar />
         <Content />
       </Message>
     </MessageList>
@@ -21,7 +21,7 @@ This is a basic messenger app.
   </ChatWindow>
   <ContactList>
     <Contact>
-      <Icon />
+      <Avatar />
       <Name />
       <Status />
     </Contact>
