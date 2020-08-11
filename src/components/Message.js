@@ -3,6 +3,9 @@ import Avatar from './Avatar';
 import ContactContext from '../contexts/ContactContext';
 
 //  MessageProps = {
+//    content: String,
+//    isSelf: Boolean,
+//    userId: Number(int),
 // }
 const Message = ({ content, isSelf, userId }) => {
   const contactMap = useContext(ContactContext);

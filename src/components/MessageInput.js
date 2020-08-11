@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 
 //  MessageInputProps = {
+//    addMessage: Function
+//    currentUserId: Number(int)
 // }
 const MessageInput = ({ addMessage, currentUserId }) => {
   const [value, setValue] = useState("");

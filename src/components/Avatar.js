@@ -1,7 +1,8 @@
 import React from 'react';
 
 //  AvatarProps = {
-//    url: string
+//    src: String
+//    alt: String
 // }
 const Avatar = ({ src, alt }) => {
   return (

@@ -3,6 +3,7 @@ import Message from './Message';
 
 //  MessageListProps = {
 //   messages: [MessageProps]
+//   currentUserId: Number(int)
 // }
 const MessageList = ({ messages, currentUserId }) => {
   return (

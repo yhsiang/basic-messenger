@@ -2,9 +2,10 @@ import React from 'react';
 import Avatar from './Avatar';
 
 //  ContactProps = {
-//    avatarURL: string
-//    status: boolean
-//    name: string
+//    avatarURL: String
+//    status: Boolean
+//    name: String
+//    onClick: Function
 // }
 const Contact = ({ avatarURL, name, status, onClick }) => {
   return (

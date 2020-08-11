@@ -5,6 +5,8 @@ import MessageContext from '../contexts/MessageContext';
 
 import './ChatWindow.css';
 //  ChatWindowProps = {
+//    chatTo: Contact
+//    currentUserId: Number(int)
 // }
 const ChatWindow = ({ chatTo, currentUserId }) => {
   const {messageMap, addMessage} = useContext(MessageContext);

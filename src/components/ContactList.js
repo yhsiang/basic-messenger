@@ -4,7 +4,8 @@ import Contact from './Contact';
 import './ContactList.css';
 
 //  ContactListProps = {
-//    contacts: [ContactProps]
+//    contacts: [Contact]
+//    changeContact: Function
 //  }
 const ContactList = ({ contacts, changeContact }) => {
   return (
