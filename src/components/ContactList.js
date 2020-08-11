@@ -1,14 +1,14 @@
 import React from 'react';
 import Contact from './Contact';
 
-import "./ContactList.css";
+import './ContactList.css';
 
 //  ContactListProps = {
-//    contacts: ContactProps
+//    contacts: [ContactProps]
 //  }
 const ContactList = ({ contacts }) => {
   return (
-    <>
+    <div className="ContactList">
       <div className="ContactList-header">ContactList</div>
       <div className="ContactList-body">
         {contacts.map(({name, avatarURL, status}) => (
@@ -18,7 +18,7 @@ const ContactList = ({ contacts }) => {
           status={status}
         />))}
       </div>
-    </>
+    </div>
   );
 };
 

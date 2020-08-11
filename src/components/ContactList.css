@@ -1,5 +1,12 @@
+.ContactList {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
 .ContactList-header {
   font-size: 32px;
+  padding-bottom: 8px;
 }
 
 .Contact {
